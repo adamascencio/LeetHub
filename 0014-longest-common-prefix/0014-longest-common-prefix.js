@@ -4,12 +4,11 @@
  */
 var longestCommonPrefix = function(strs) {
     let answer = '';
-    let minWord = strs[0];
     let minWordIdx = 0;
     let minWordCount = strs[minWordIdx].length
     let arr = [];
     strs.forEach((word, idx) => {
-        word.length < minWord.length ? minWordIdx = idx : null;
+        word.length < strs[0].length ? minWordIdx = idx : null;
     });
     while (minWordCount >= 0) {
         strs.forEach(word => arr.push(word.slice(0, minWordCount + 1)));
