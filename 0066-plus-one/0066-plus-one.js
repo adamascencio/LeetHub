@@ -3,6 +3,5 @@
  * @return {number[]}
  */
 var plusOne = function(digits) {
-    const addOne = BigInt(digits.join('')) + 1n;
-    return Array.from(String(addOne), Number);
+    return Array.from(String(BigInt(digits.join('')) + 1n), Number);
 };
