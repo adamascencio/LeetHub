@@ -4,14 +4,10 @@
  * @return {boolean}
  */
 var canConstruct = function(ransomNote, magazine) {
+    let result = true;
     const magArr = magazine.split('');
     for (let i = 0; i < ransomNote.length; i++) {
-        if (magArr.includes(ransomNote[i])) {
-            const charIdx = magArr.indexOf(ransomNote[i]);
-            magArr.splice(charIdx, 1);
-        } else {
-            return false;
-        }
+        magArr.includes(ransomNote[i]) ? magArr.splice(magArr.indexOf(ransomNote[i]), 1) : result = false;
     }
-    return true;
+    return result;
 };
